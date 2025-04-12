@@ -68,9 +68,11 @@ input {
 
 button {
   padding: 15px 25px;
+  background-color: #2196f3;
+  color: white;
 }
 
 .output {
   text-align: center;
-  color: #333;
+  color: #4caf50;
 }
