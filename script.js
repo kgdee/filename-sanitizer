@@ -1,8 +1,23 @@
-const input = document.querySelector(".input");
+const textInput = document.querySelector(".text-input");
+const messageEl = document.querySelector(".message")
 
 function sanitize() {
-  let sanitized = input.value.replace(/[<>:"/\\|?*]/g, "").replace(/\./g, " ");
-  document.querySelector(".output").innerHTML = `Filename sanitized and copied!<br/> ${sanitized}`;
+  const text = textInput.value
+  if (!text) return
+
+  let sanitized = text
+    .replace(/[<>:"/\\|?*\x00-\x1F]/g, " ")
+    .trim()
+    .replace(/\s+/g, " ");
+
+  messageEl.innerHTML = `Filename sanitized and copied!<br/> <span>${sanitized}</span>`;
 
   navigator.clipboard.writeText(sanitized);
 }
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === " ") {
+    event.preventDefault()
+    sanitize()
+  }
+})
