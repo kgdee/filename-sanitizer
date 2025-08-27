@@ -42,7 +42,6 @@ button {
   background: var(--green);
   color: white;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
   white-space: nowrap;
 }
@@ -64,7 +63,7 @@ body {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 480px;
   margin: auto;
 }
 
@@ -75,27 +74,26 @@ body {
   width: 100%;
   height: 100vh;
   padding: 10px;
+  padding-top: 150px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 20px;
 }
 
 .app > * {
   text-align: center;
-  margin-bottom: 20px;
-}
-
-.title {
-  margin-top: 150px;
 }
 
 .text-input {
   border-bottom: 1px solid #333;
-  padding: 5px;
+  padding: 20px;
+  background-color: var(--label-color);
 }
 
 .sanitize-btn {
+  height: 80px;
   background-color: var(--lightblue);
+  font-size: 1rem;
 }
 
 .message {
